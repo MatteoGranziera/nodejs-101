@@ -70,3 +70,4 @@ NPM gestisce 3 tipologie di dipendenze:
 - `devDependencies`: dipendenze di sviluppo, quelle non necessarie all'esecuzione (`npm install --save-dev`)
 - `global`: queste vengono installate nel sistema quindi non si troveranno nel `package.json` (`npm install --global`)
 
+## 5. 

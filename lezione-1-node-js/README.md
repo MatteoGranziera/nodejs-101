@@ -136,7 +136,7 @@ Utilizzo di prototipi per la creazione di classi.
 
 
 ## 6. Callback e Event Loop
-Node.js fa ampio uso di callback per gestire le operazioni asincrone. Quando un'operazione asincrona è completata, viene chiamato un callback per gestire il risultato. L'Event Loop è responsabile di gestire i callback e di eseguirli quando l'operazione asincrona è completata.
+Node.js fa ampio uso di callback per gestire le operazioni asincrone. Quando un'operazione asincrona è completata, viene chiamata una callback per gestire il risultato. L'Event Loop è responsabile di gestire le callback e di eseguirle quando l'operazione asincrona è completata.
 
 L'Event Loop di Node.js è il meccanismo centrale che consente la gestione degli eventi.
 Riceve eventi, li incolonna e li gestisce uno alla volta. È responsabile di eseguire i callback associati agli eventi.
@@ -163,3 +163,4 @@ Riceve eventi, li incolonna e li gestisce uno alla volta. È responsabile di ese
 ```
 
 Fonte: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick
+More: https://blog.platformatic.dev/the-nodejs-event-loop
