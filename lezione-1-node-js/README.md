@@ -39,9 +39,9 @@ Variabili e Tipi di Dati:
 - Tipi primitivi: string, number, boolean, symbol, null e undefined
 - Array e Object
 
-Funzioni: 
+### Funzioni
 
-Funzione (tradizionale)
+####  Funzione (tradizionale)
 ```javascript
 
 function sum(arg1, arg2) {
@@ -51,14 +51,14 @@ function sum(arg1, arg2) {
 sum(2, 3)
 ```
 
-Funzione anonima (tradizionale)
+#### Funzione anonima (tradizionale)
 ```javascript
 ;(function (arg1, arg2) {
   return arg1 + arg2
 })(2, 3)
 ```
 
-Arrow function
+#### Arrow function
 ```javascript
 const sum = (arg1, arg2) => {
   return arg1 + arg2
@@ -67,28 +67,27 @@ const sum = (arg1, arg2) => {
 sum(2, 3)
 ```
 
-Arrow function (short)
+#### Arrow function (short)
 ```javascript
 const sum = (arg1, arg2) => arg1 + arg2
 
 sum(2,3)
 ```
 
-Arrow function anonima
+#### Arrow function anonima
 ```javascript
 ;((arg1, arg2) => {
   return arg1 + arg2
 })(2, 3)
 ```
 
-Alle funzioni è possibile passare altre funzioni come argomenti
+Alle funzioni è possibile passare funzioni come argomenti
 
 ```javascript
 function foo(fn) {
   fn()
 }
 
-// Per dare un contesto ad una funzione va chiamata usando la keyword `new`, senza il contesto sarà undefined
 foo(function () {console.log("Hello World")})
 ```
 
@@ -104,7 +103,9 @@ const esempio = new Esempio();
 ```
 
 
-Istruzioni:
+### Costrutti
+
+#### Condizionali
 
 ```javascript
 if(a === b) { 
@@ -119,48 +120,81 @@ if(a === b) {
 const result = a === b ? "a" : "b")
 ```
 
-Cicli: 
+
+#### for
 ```javascript
-
-
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
 ```
 
+#### for...of
+```javascript
+const numeri = [1, 2, 3, 4, 5];
 
-Cicli for, while, e do-while.
-Istruzione switch.
-Oggetti e Prototipi:
-
-Creazione di oggetti e accesso alle proprietà.
-Utilizzo di prototipi per la creazione di classi.
-
-
-
-## 6. Callback e Event Loop
-Node.js fa ampio uso di callback per gestire le operazioni asincrone. Quando un'operazione asincrona è completata, viene chiamata una callback per gestire il risultato. L'Event Loop è responsabile di gestire le callback e di eseguirle quando l'operazione asincrona è completata.
-
-L'Event Loop di Node.js è il meccanismo centrale che consente la gestione degli eventi.
-Riceve eventi, li incolonna e li gestisce uno alla volta. È responsabile di eseguire i callback associati agli eventi.
-
-```
-   ┌───────────────────────────┐
-┌─>│           timers          │
-│  └─────────────┬─────────────┘
-│  ┌─────────────┴─────────────┐
-│  │     pending callbacks     │
-│  └─────────────┬─────────────┘
-│  ┌─────────────┴─────────────┐
-│  │       idle, prepare       │
-│  └─────────────┬─────────────┘      ┌───────────────┐
-│  ┌─────────────┴─────────────┐      │   incoming:   │
-│  │           poll            │<─────┤  connections, │
-│  └─────────────┬─────────────┘      │   data, etc.  │
-│  ┌─────────────┴─────────────┐      └───────────────┘
-│  │           check           │
-│  └─────────────┬─────────────┘
-│  ┌─────────────┴─────────────┐
-└──┤      close callbacks      │
-   └───────────────────────────┘
+for (const numero of numeri) {
+  console.log(numero);
+}
 ```
 
-Fonte: https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick
-More: https://blog.platformatic.dev/the-nodejs-event-loop
+#### for...in
+```javascript
+const persona = { nome: 'Mario', età: 30, città: 'Roma' };
+
+for (const chiave in persona) {
+  console.log(`${chiave}: ${persona[chiave]}`);
+}
+```
+
+#### while
+```javascript
+let contatore = 0;
+
+while (contatore < 3) {
+  console.log(contatore);
+  contatore++;
+}
+```
+
+#### do...while
+```javascript
+let contatore = 0;
+
+do {
+  console.log(contatore);
+  contatore++;
+} while (contatore < 3);
+```
+#### forEach
+```javascript
+const numeri = [1, 2, 3, 4, 5];
+
+numeri.forEach(numero => {
+  console.log(numero);
+});
+```
+
+#### map
+```javascript
+const numeri = [1, 2, 3, 4, 5];
+
+const numeriRaddoppiati = numeri.map(numero => {
+  return numero * 2;
+});
+```
+
+#### switch
+```javascript
+const colore = 'blu';
+
+switch (colore) {
+  case 'rosso':
+    console.log('Il colore è rosso');
+    break;
+  case 'blu':
+    console.log('Il colore è blu');
+    break;
+  default:
+    console.log('Il colore non è rosso o blu');
+}
+```
