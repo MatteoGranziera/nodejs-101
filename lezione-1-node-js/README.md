@@ -198,3 +198,7 @@ switch (colore) {
     console.log('Il colore non è rosso o blu');
 }
 ```
+
+# Esercizio: modifica il codice nel file `lab/server.js` come segue:
+- aggiungere una route `/numbers` che restituisca i numeri da 1 a 10 separati da virgola
+- aggiungere una route `/names` che restituisca i nomi delle persone presenti nell'array `names` separati da virgola

@@ -129,3 +129,12 @@ const greetModule = require('./greet');
 
 greetModule.greet('Mario'); // Output: Ciao, Mario!
 ```
+
+# Esercizio:
+
+- Crea un nuovo progetto nella cartella `lab/` npm utilizzando `npm init`.
+- Crea un modulo personalizzato chiamato calculator.js che esporta quattro funzioni: `add` e `subtract` Ogni funzione dovrebbe prendere due numeri come argomenti e restituire il risultato dell'operazione corrispondente.
+- In un file `main.js`, importa il modulo calculator e utilizza le sue funzioni per eseguire alcune operazioni matematiche.
+- Installa la libreria lodash utilizzando `npm install lodash`.
+- Modifica il modulo calculator per utilizzare la funzione _.isNumber di lodash per verificare che gli argomenti passati alle funzioni siano numeri. Se non lo sono, le funzioni dovrebbero restituire un messaggio di errore.
+- Assicurati che il tuo package.json rifletta correttamente lodash come una dipendenza del tuo progetto.

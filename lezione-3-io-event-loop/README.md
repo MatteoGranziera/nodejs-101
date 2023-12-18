@@ -217,3 +217,7 @@ emitter.on('greet', name => {
 
 emitter.emit('greet', 'Mario') // Output: Hello, Mario!
 ```
+
+# Esercizio
+
+- Modifica il file `lab/file.js` in modo da utilizzare le Promise per gestire le operazioni asincrone.
