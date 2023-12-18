@@ -73,3 +73,59 @@ NPM gestisce 3 tipologie di dipendenze:
 Le dipendenze vengono installate nella cartella `node_modules` e vengono importate con il nome del pacchetto.
 
 Note: la cartella `node_modules` non deve essere versionata. (.gitignore)
+
+## 5. Gestione delle versioni con npm
+
+NPM utilizza il [Semantic Versioning](https://semver.org/lang/it/) per gestire le versioni dei pacchetti.
+
+Il numero di versione è composto da 3 numeri separati da un punto:
+
+- Major: indica una versione con modifiche che non sono retrocompatibili con la versione precedente
+- Minor: indica una versione con modifiche retrocompatibili con la versione precedente
+- Patch: indica una versione con correzioni di bug
+
+Esempio: `1.0.0`
+
+## 6. ESM
+
+ESM (EcmaScript Modules) è un sistema di moduli per JavaScript che permette di importare ed esportare funzioni e oggetti.
+
+Per utilizzare ESM è necessario aggiungere `"type": "module"` nel file `package.json`.
+
+```json
+{
+  "type": "module"
+}
+```
+
+Per importare un modulo si utilizza la keyword `import`:
+
+```javascript
+import { greet } from './greet.js';
+
+greet('Mario'); // Output: Ciao, Mario!
+```
+
+Per esportare un modulo si utilizza la keyword `export`:
+
+```javascript
+
+const greet = nome => {
+  console.log(`Ciao, ${nome}!`);
+};
+
+export { greet };
+```
+
+## 7. Importare moduli CommonJS in ESM
+
+Per importare un modulo CommonJS in un modulo ESM si utilizza la funzione `createRequire`:
+
+```javascript
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
+const greetModule = require('./greet');
+
+greetModule.greet('Mario'); // Output: Ciao, Mario!
+```

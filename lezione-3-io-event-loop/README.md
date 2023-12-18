@@ -199,3 +199,21 @@ async function readFile() {
 readFile()
 ```
 
+## 7. Event emitter
+
+L'Event Emitter è un pattern utilizzato per gestire gli eventi. L'Event Emitter permette di registrare callback per gestire gli eventi e di emettere eventi.
+
+Per utilizzare l'Event Emitter si utilizza il modulo `events`. Il modulo `events` permette di creare un Event Emitter utilizzando la classe `EventEmitter`.
+
+```javascript
+// Esempio di Event Emitter
+const EventEmitter = require('events')
+
+const emitter = new EventEmitter()
+
+emitter.on('greet', name => {
+  console.log(`Hello, ${name}!`)
+})
+
+emitter.emit('greet', 'Mario') // Output: Hello, Mario!
+```
